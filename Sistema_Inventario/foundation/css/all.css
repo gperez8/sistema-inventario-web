@@ -1,0 +1,19 @@
+/*CSS de Foundation por defecton*/
+
+@import url(foundation.css);
+@import url(foundation.min.css);
+@import url(normalize.css);
+/*------------------------------*/
+
+
+/*CSS Del Proyecto (Nuestros)*/
+
+@import url(my_css.css);
+/*--------------------------*/
+
+
+/*CSS Del Tema de Jquery*/
+
+@import url(cupertino/jquery-ui-1.10.4.custom.css);
+@import url(cupertino/jquery-ui-1.10.4.custom.min.css);
+/*----------------------*/
