@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "ctrl_login";
+$route['default_controller'] = "ctrl_calendario";
 $route['404_override'] = '';
 
 

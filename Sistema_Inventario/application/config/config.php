@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/prueba_codeigniter';
+$config['base_url']	= 'http://localhost/prueba_sistema_inventario';
 
 /*
 |--------------------------------------------------------------------------
