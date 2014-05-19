@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Ctrl_calendario extends CI_Controller {
+class Ctrl_rectificacion_datos extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,12 +17,23 @@ class Ctrl_calendario extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	
+	function __construct()
 	{
-		
-		$this->load->view('calendario');
+		// Llamar al constructor de CI_Model
+			parent::__construct();
+
+			$this->load->model('model_modificacion_datos');
+	}
+
+	public function index()
+	{	
+		$this->load->view('view_rectificacion_datos');
 	}
 }
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
+?>
+
+

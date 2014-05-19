@@ -38,9 +38,13 @@
 |
 */
 
-$route['default_controller'] = "ctrl_calendario";
+$route['default_controller'] = "ctrl_login";
+$route['fecha'] = "ctrl_calendario/index";
+$route['alta_medicamento'] = "ctrl_alta_medicamento/index";
+$route['rectificacion_datos'] = "ctrl_rectificacion_datos/index";
+$route['modificacion_datos'] = "ctrl_modificacion_datos/index";
 $route['404_override'] = '';
 
 
 /* End of file routes.php */
-/* Location: ./application/config/routes.php */
+/* Location: ./application/config/routes.php */ 

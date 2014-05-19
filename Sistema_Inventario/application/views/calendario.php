@@ -11,6 +11,7 @@
 		    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		    <title>Sistema de Inventario</title>
+		    <base href="<?php echo base_url();?>">
 		    <link rel="stylesheet" type= "text/css" href = "foundation/css/all.css">
 		    
 		    <script src="foundation/js/jquery-1.11.1.min.js"></script>
@@ -27,6 +28,20 @@
 		</head>
 	<body>
 
+
+		<?php
+
+			$data = array(
+              'name'        => 'x',
+              'id'          => 'datepicker',
+              'value'       => 'johndoe',
+              'maxlength'   => '100',
+              'size'        => '50',
+              'style'       => 'width:50%',
+            );
+
+		echo form_input($data);
+		?>
 
 
 		<p>

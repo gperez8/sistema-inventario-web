@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Sistema de Inventario</title>
+
+    <base href="<?php echo base_url();?>">
+    
     <link rel="stylesheet" type= "text/css" href = "foundation/css/all.css">
     
     
