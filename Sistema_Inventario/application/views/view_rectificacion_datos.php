@@ -48,12 +48,12 @@
 							echo form_open('/ctrl_modificacion_datos/recibir_datos_rectificacionDatos', $attributes);
 						?>
 
-						<label>Codigo del Medicamento</label>
+						<label>Nombre del Medicamento</label>
 						<?php
 							$data = array(
-					              'name'        => 'codigo',
-					              'id'          => 'cod_med',
-					              'placeholder' => 'Codigo',
+					              'name'        => 'nombre_med',
+					              'id'          => 'nombre_med',
+					              'placeholder' => 'Nombre',
 					              'maxlength'   => '100',
 					              'size'        => '50',
 					              'style'       => 'width:50%',

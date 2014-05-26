@@ -1,12 +1,11 @@
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
+
    
 
 <!DOCTYPE html>
 <html>
 		<head>
-
 			<meta charset="utf-8" />
 		    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -28,6 +27,10 @@
 		</head>
 	<body>
 
+		<?php
+			echo "numero de dosis: $num_dosis";
+		?>
+
 
 		<?php
 
@@ -47,9 +50,5 @@
 		<p>
 			date: <input type="text" id="datepicker">
 		</p>
-
-		
-
 	</body>
-
 </html>

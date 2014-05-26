@@ -121,7 +121,7 @@
 							$data = array(
 				              'name'        => 'cantidad_med',
 				              'id'          => 'cantidad_med',
-				              'placeholder' => 'Numero de Dosis',
+				              'placeholder' => 'Cantidad',
 				              'maxlength'   => '100',
 				              'size'        => '50',
 				              'style'       => 'width:50%',
@@ -135,7 +135,7 @@
 						<?php
 							$data = array(
 				              'name'        => 'cantidad_unidad',
-				              'id'          => 'cantidad_unidad',
+				              'id'          => 'Cantidad por unidad',
 				              'placeholder' => 'Numero de Dosis',
 				              'maxlength'   => '100',
 				              'size'        => '50',
@@ -145,13 +145,13 @@
 							echo form_input($data);
 						?>
 
-						<label>Laboratotio</label>
+						<label>Laboratorio</label>
 
 						<?php
 							$data = array(
 				              'name'        => 'laboratorio',
 				              'id'          => 'laboratorio',
-				              'placeholder' => 'Numero de Dosis',
+				              'placeholder' => 'laboratorio',
 				              'maxlength'   => '100',
 				              'size'        => '50',
 				              'style'       => 'width:50%',
@@ -166,28 +166,69 @@
 							$data = array(
 				              'name'        => 'valor_unitario',
 				              'id'          => 'valor_unitario',
-				              'placeholder' => 'Numero de Dosis',
+				              'placeholder' => 'Valor Unitario',
 				              'maxlength'   => '100',
 				              'size'        => '50',
 				              'style'       => 'width:50%',
 				            );
 
 							echo form_input($data);
+							
+						?>
+
+						<label>Lote</label>
+
+						<?php
+							$data = array(
+				              'name'        => 'lote',
+				              'id'          => 'lote',
+				              'placeholder' => 'Numero de Lote',
+				              'maxlength'   => '100',
+				              'size'        => '50',
+				              'style'       => 'width:50%',
+				            );
+
+							echo form_input($data);
+							
+
+						?>
+
+						<label>Fecha de Elaboracion</label>
+
+						<?php
+							$data = array(
+				              'name'        => 'f_eleboracion',
+				              'id'          => 'fecha_elaboracion',
+				              'placeholder' => 'Fecha',
+				              'maxlength'   => '100',
+				              'size'        => '50',
+				              'style'       => 'width:50%',
+				            );
+
+				            echo form_input($data);
+				            
+						?>
+
+						<label>Fecha de Vencimiento</label>
+
+						<?php
+							$data = array(
+				              'name'        => 'f_vencimiento',
+				              'id'          => 'fecha_vencimiento',
+				              'placeholder' => 'Fecha',
+				              'maxlength'   => '100',
+				              'size'        => '50',
+				              'style'       => 'width:50%',
+				            );
+				            
+							echo form_input($data);
+
 							$data = array(
 								
 								'name'  => 'enviar',
 								'class' => 'button tiny'
 							);
 							echo form_submit($data, 'Agregar');
-					
-
-
-							echo form_close();
-
-							/*foreach ($result->result_array() as $value) {
-								echo $value['tipo_presentacion'] .'<br>';
-							}*/
-
 
 						?>
 					</div>

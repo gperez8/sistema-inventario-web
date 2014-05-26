@@ -31,24 +31,23 @@ class Ctrl_modificacion_datos extends CI_Controller {
 	public function index()
 	{	
 		$this->load->view('view_modificacion_datos');
-	}
-
+	}	
 
 	public function recibir_datos_rectificacionDatos()
 	{
 
 		$consulta = array(
 
-			'cod_med' 	=> $this->input->post('codigo'),
+			'nombre_med' 	=> $this->input->post('nombre_med'),
 			'tipo_inv'	=> $this->input->post('opciones')
 
 			);
 
-		if ($consulta['tipo_inv'] != 'none' && strlen($consulta['cod_med']) > 0) 
+		if ($consulta['tipo_inv'] != 'none' && strlen($consulta['nombre_med']) > 0) 
 		{
 			if ($consulta['tipo_inv'] == '1') 
 			{
-				$query = $this->model_modificacion_datos->datos_inventario_principal($consulta['cod_med']);	
+				$query = $this->model_modificacion_datos->datos_inventario_principal($consulta['nombre_med']);	
 				
 				$row = $query->row_array();
 
@@ -57,9 +56,16 @@ class Ctrl_modificacion_datos extends CI_Controller {
 
 			}else 
 			{
-				$query = $this->model_modificacion_datos->datos_inventario_unidosis($consulta['cod_med']);
+				$query = $this->model_modificacion_datos->datos_inventario_unidosis($consulta['nombre_med']);
 			
 				$row = $query->row_array();
+				
+				/*if ($row['cod_med'] == '001C' && $row['cantidad_unidad'] == '60' ) 
+				{
+					redirect('http://localhost/prueba_sistema_inventario/');
+				}*/
+
+				/*$row = $query->row_array();*/
 
 				$this->load->view('view_modificacion_datosU',$row);
 			}

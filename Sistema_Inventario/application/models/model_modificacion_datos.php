@@ -7,20 +7,39 @@ class Model_modificacion_datos extends CI_Model
 			parent::__construct();
 	}
 	
-	function datos_inventario_principal($codigo)
+	function datos_inventario_principal($nombre_med)
 	{
 		$query = $this->db->query("select * from medicamento 
-			where cod_med ="."'".$codigo."'");
+			where nombre_med ="."'".$nombre_med."'");
 
 		return($query);
 	}
 
-	function datos_inventario_unidosis($codigo)
+	function datos_inventario_unidosis($nombre_med)
 	{
-		$query = $this->db->query("select * from inventario_unidosis 
-			where cod_med ="."'".$codigo."'");
+		$this->db->select('cod_med'); 
+		$this->db->where('nombre_med',$nombre_med);
+		$query = $this->db->get('medicamento');
 
-		return($query);
+		if ($query->num_rows() == 1) 
+		{
+			$query = $query->row_array();
+
+			$this->db->select('*'); 
+			$this->db->where('cod_med',$query['cod_med']);
+			$result = $this->db->get('inventario_unidosis');
+			return($result);
+		}
+
+		
+		/*this->db->select('nom');
+		$this->db->from('inventario_unidosis');
+		$this->db->join('medicamento', 'medicamento.cod_med = inventario_unidosis.cod_med');
+		$this->db->where('nombre_med',$nombre_med);
+		$query = $this->db->get();*/
+
+
+		
 	}
 
 	function agregar_cambioPrincipal($data){

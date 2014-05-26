@@ -38,7 +38,8 @@ class Ctrl_alta_medicamento extends CI_Controller {
 	}
 
 	public function recibir_datos_altaMedicamento(){
-		$data = array(
+
+		$data_med = array(
 
 			'cod_med' 	 			=> $this->input->post('codigo'),
 			'nombre_med' 			=> $this->input->post('medicamento'),
@@ -49,11 +50,38 @@ class Ctrl_alta_medicamento extends CI_Controller {
 			'laboratorio' 			=> $this->input->post('laboratorio'),
 			'valor_unitario' 		=> $this->input->post('valor_unitario')
 
-			);
+		);
 
-		$this->model_alta_medicamento->agregar_medicamento($data);
+		$data_lote = array(
+
+			'cod_med'		    => $data_med['cod_med'],
+			'lote'	 		    => $this->input->post('lote'),
+			'fecha_eleboracion' => $this->input->post('f_eleboracion'),
+			'fecha_vencimiento' => $this->input->post('f_vencimiento')
+		);
+
+
+		$this->model_alta_medicamento->agregar_medicamento($data_med,$data_lote);
 		redirect('http://localhost/prueba_sistema_inventario/alta_medicamento');
 
+	}
+
+	public function get_nombre_med(){
+
+		if (isset($_GET['term']))	/// Nota: siempre debe ser $_GET['term'] si cambias term no funciona
+    	{
+      		$q = strtolower($_GET['term']);
+      		$this->model_alta_medicamento->get_nombre_med($q);
+		}
+	}
+
+	public function get_lab(){
+
+		if (isset($_GET['term']))	/// Nota: siempre debe ser $_GET['term'] si cambias term no funciona
+    	{
+      		$q = strtolower($_GET['term']);
+      		$this->model_alta_medicamento->get_lab($q);
+		}
 	}
 
 }

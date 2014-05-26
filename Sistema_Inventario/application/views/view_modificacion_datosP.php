@@ -49,7 +49,11 @@
 							$attributes = array('name' => 'realizar_cambios');
 
 							echo form_open('/ctrl_modificacion_datos/realizar_cambiosPrincipal', $attributes);
+
+
 						?>
+
+
 
 
 						<label>Nombre de Medicamento</label>
@@ -97,17 +101,43 @@
 								'8' => 'capsulas'
 							);
 
-							echo $tipo_presentacion;
+							 function tipo_opcion($tipo_presentacion)
+							 {	
+									switch ($tipo_presentacion) 
+									{
+							    		case "tabletas":
+							        		return('1');
+							        		break;
+							    		case "capsulas blanda":
+							        		return('2');
+							        		break;
+							    		case "comprimidos":
+							       			return('3');
+							        		break;
+							        	case "jarabe":
+							       			return('4');
+							        		break;
+							        	case "solucion":
+							       			return('5');
+							        		break;
+							        	case "ampollas":
+							       			return('6');
+							        		break;
+							        	case "tabletas masticables":
+							       			return('7');
+							        		break;
+							        	case "capsulas":
+							       			return('8');
+							        		break;
+									}
+							 }	
+								
 
-							$selector = array($tipo_presentacion);
+							$selector = array(tipo_opcion($tipo_presentacion));
 							
-							echo form_dropdown('opciones', $opciones,$selector);
+							echo form_dropdown('opciones',$opciones,$selector);
 						?>
 						
-
-						<?php
-							echo $tipo_presentacion;
-						?>
 
 						<label>Numero de Dosis</label>
 
